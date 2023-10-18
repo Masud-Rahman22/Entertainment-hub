@@ -1,7 +1,15 @@
 import { NavLink } from "react-router-dom";
 import logo from "/dc-entertainment-logo.jpg"
+import { useContext } from "react";
+import { authContext } from "../AuthProvider/AuthProvider";
 
 const NavBar = () => {
+    const { user, Logout } = useContext(authContext)
+    const handleToLogout = () => {
+        Logout()
+            .then()
+            .catch()
+    }
     const Links = <>
         <li className="text-white"><NavLink
             to="/"
@@ -55,8 +63,16 @@ const NavBar = () => {
                         {Links}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn bg-orange-400 text-white">Button</a>
+                <div>
+                    {
+                        user && <div className="navbar-end gap-2">
+                            <p>{user.displayName}</p>
+                            <div className="w-10 rounded-full navbar-end">
+                                <img src={user?.photoURL} />
+                            </div>
+                            <button onClick={handleToLogout} className="btn btn-warning btn-outline">Logout</button>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

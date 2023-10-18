@@ -1,13 +1,15 @@
 
 
 // eslint-disable-next-line react/prop-types
-const BrandCards = ({card}) => {
+const BrandCards = ({ card }) => {
     // eslint-disable-next-line react/prop-types
-    const {name,image} = card;
+    const { name, image } = card;
     console.log(card);
     return (
         <div>
-            <div className="relative flex flex-col text-gray-700 bg-black shadow-md rounded-xl bg-clip-border m-10">
+            <div className="relative flex flex-col text-gray-700 bg-black shadow-md rounded-xl bg-clip-border m-10" data-aos="flip-left"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000">
                 <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white h-96 rounded-xl bg-clip-border">
                     <img
                         src={image}
