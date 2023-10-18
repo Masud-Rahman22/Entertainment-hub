@@ -1,12 +1,21 @@
+import { useLoaderData } from "react-router-dom";
 import Banner from "../Layout/Banner";
 import BrandCards from "../Layout/BrandCards";
+import TeamSection from "../Layout/TeamSection";
 
 
 const Home = () => {
+    const brandCards = useLoaderData()
+    console.log(brandCards);
     return (
         <div>
             <Banner></Banner>
-            <BrandCards></BrandCards>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {
+                    brandCards.map(card => <BrandCards key={card.id} card = {card}></BrandCards>)
+                }
+            </div>
+            <TeamSection></TeamSection>
         </div>
     );
 };
