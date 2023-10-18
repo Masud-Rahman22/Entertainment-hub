@@ -63,17 +63,15 @@ const NavBar = () => {
                         {Links}
                     </ul>
                 </div>
-                <div>
                     {
                         user && <div className="navbar-end gap-2">
                             <p>{user.displayName}</p>
                             <div className="w-10 rounded-full navbar-end">
-                                <img src={user?.photoURL} />
+                                <img className="rounded-full" src={user?.photoURL} />
                             </div>
                             <button onClick={handleToLogout} className="btn btn-warning btn-outline">Logout</button>
                         </div>
                     }
-                </div>
             </div>
         </div>
     );

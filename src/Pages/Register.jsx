@@ -4,6 +4,8 @@ import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import loginLogo from '/4957136.jpg'
 import swal from 'sweetalert';
+import { updateProfile } from "firebase/auth";
+import auth from "../firebase/firebase.config";
 const Register = () => {
     const { googleLogin, register } = useContext(authContext);
     const handleToSubmit = e => {
@@ -20,6 +22,13 @@ const Register = () => {
         register(email, password)
             .then(() => {
                 swal("Great", "You are a registered member now", "success");
+                updateProfile(auth.currentUser, {
+                    displayName: name, photoURL: photo
+                }).then(() => {
+                    console.log('profile updated');
+                }).catch((error) => {
+                    console.log(error);
+                });
             })
             .catch()
     }
