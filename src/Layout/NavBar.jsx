@@ -69,7 +69,7 @@ const NavBar = () => {
                             <div className="w-10 rounded-full navbar-end">
                                 <img className="rounded-full" src={user?.photoURL} />
                             </div>
-                            <button onClick={handleToLogout} className="btn btn-warning btn-outline">Logout</button>
+                            <button onClick={handleToLogout} className="btn bg-orange-400 text-white border-none">Logout</button>
                         </div>
                     }
             </div>

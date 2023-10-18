@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Banner from "../Layout/Banner";
 import BrandCards from "../Layout/BrandCards";
 import TeamSection from "../Layout/TeamSection";
+import ContentSection from "../Layout/ContentSection";
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
                 }
             </div>
             <TeamSection></TeamSection>
+            <ContentSection></ContentSection>
         </div>
     );
 };
