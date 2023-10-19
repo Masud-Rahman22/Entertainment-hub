@@ -8,10 +8,7 @@ const ContentSection = () => {
         <div>
             <h1 className='text-orange-400 text-center font-medium text-5xl mt-10 font-lobster'>Amp Up Your Entertainment</h1>
             <p className='text-lg font-thin text-center lg:w-3/4 mx-auto mt-5'>Delve into the captivating journey of the entertainment industry with Entertainment History Chronicles. Explore iconic moments, legendary figures, and milestones that have shaped the world of entertainment. Uncover the stories behind the scenes, from classic Hollywood to modern music, as we celebrate the magic of showbiz rich past.</p>
-            <div className="mt-16 hero bg-black" data-aos="fade-left"
-                data-aos-anchor="#example-anchor"
-                data-aos-offset="500"
-                data-aos-duration="500">
+            <div className="mt-16 hero bg-black" data-aos="fade-right">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img src={pic1} className="max-w-sm rounded-lg shadow-2xl" />
                     <div>
@@ -20,7 +17,7 @@ const ContentSection = () => {
                     </div>
                 </div>
             </div>
-            <div className="mt-16 hero bg-black">
+            <div className="mt-16 hero bg-black" data-aos="fade-left">
                 <div className="hero-content flex-col lg:flex-row">
                     <img src={pic2} className="max-w-sm rounded-lg shadow-2xl" />
                     <div>
@@ -40,7 +37,7 @@ const ContentSection = () => {
                     </div>
                 </div>
             </div>
-            <div className="mt-16 hero bg-black">
+            <div className="mt-16 hero bg-black" data-aos="fade-right">
                 <div className="hero-content flex-col lg:flex-row">
                     <img src={pic4} className="max-w-sm rounded-lg shadow-2xl" />
                     <div>

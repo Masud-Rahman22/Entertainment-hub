@@ -1,12 +1,33 @@
+import { useEffect, useState } from "react";
 
 
 // eslint-disable-next-line react/prop-types
-const BrandCards = ({ card }) => {
+const BrandCards = ({ card, brandCards }) => {
     // eslint-disable-next-line react/prop-types
     const { name, image } = card;
-    console.log(card);
+    const [showProducts, setShowProducts] = useState([]);
+    useEffect(() => {
+        // eslint-disable-next-line react/prop-types
+        const products = brandCards?.filter(card => (card.name) === name)
+        setShowProducts(products)
+    }, [brandCards, name])
+    console.log(showProducts);
+    const handleToShowProducts = (name) => {
+        console.log(name);
+        fetch(`http://localhost:5000/cards/${name}`,{
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(showProducts)
+        })
+        .then(res=>res.json())
+        .then(data=>console.log(data))
+    }
+
     return (
-        <div>
+        // eslint-disable-next-line react/prop-types
+        <div onClick={()=>handleToShowProducts(showProducts.name)}>
             <div className="relative flex flex-col text-gray-700 bg-black shadow-md rounded-xl bg-clip-border m-10" data-aos="flip-left"
                 data-aos-easing="ease-out-cubic"
                 data-aos-duration="2000">
