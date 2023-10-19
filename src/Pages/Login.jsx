@@ -1,15 +1,18 @@
 import { useContext } from "react";
 import { authContext } from "../AuthProvider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginLogo from '/4957136.jpg'
 import swal from 'sweetalert';
 const Login = () => {
     const { googleLogin, Login } = useContext(authContext);
+    const location = useLocation();
+    const navigate = useNavigate();
     const handleToGoogleLogin = () => {
         googleLogin()
             .then(() => {
                 swal("Great", "You are signed in with Google", "success");
+                navigate(location?.state ? location.state : '/')
             })
             .catch()
     }
