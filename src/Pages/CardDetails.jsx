@@ -4,8 +4,18 @@ import { useLoaderData } from "react-router-dom";
 const CardDetails = () => {
     const details = useLoaderData();
     const {brandName,image,name,price,rating,shortDescription,type,_id} = details;
-    const handleToAdd = (_id)=>{
-        fetch('')
+    const handleToAddInCart =(_id)=>{
+        fetch(`http://localhost:5000/carts/${_id}`,{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(details)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
     }
     return (
         <div>
@@ -30,7 +40,7 @@ const CardDetails = () => {
                     <span className="text-orange-400 text-xl font-semibold mr-10">Price: {price}</span>
                     <span className="text-orange-400 text-xl font-semibold mr-10">Rating: {rating}</span>
                     <span className="text-orange-400 text-xl font-semibold">Type: {type}</span>
-                    <button onClick={()=>handleToAdd(_id)} className="btn bg-orange-400 w-full text-white mt-5">Add To Cart</button>
+                    <button onClick={()=>handleToAddInCart(_id)} className="btn bg-orange-400 w-full text-white mt-5">Add To Cart</button>
                 </div>
             </div>
         </div>

@@ -29,7 +29,6 @@ const ProductInfo = () => {
                     <SwiperSlide><img className="h-[500px] w-full" src={productDetails[4].imageSlider1} alt="" /></SwiperSlide>
                     <SwiperSlide><img className="h-[500px] w-full" src={productDetails[4].imageSlider2} alt="" /></SwiperSlide>
                     <SwiperSlide><img className="h-[500px] w-full" src={productDetails[4].imageSlider3} alt="" /></SwiperSlide>
-                    ...
                 </Swiper>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-20">

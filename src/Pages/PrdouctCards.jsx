@@ -16,7 +16,7 @@ const PrdouctCards = ({ card, productDetails }) => {
                         src={image}
                         alt="ui/ux review check"
                     />
-                    <div className="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-tr from-transparent via-transparent to-black/60"></div>
+                    <div className="inset-0 w-full h-full to-bg-black-10 bg-gradient-to-tr from-transparent via-transparent to-black/60"></div>
                 </div>
                 <div className="p-6 flex-grow">
                     <div className="flex items-center justify-between mb-3">
@@ -43,7 +43,7 @@ const PrdouctCards = ({ card, productDetails }) => {
                             type="submit"
                             data-ripple-light="true">Details</button>
                     </Link>
-                    <Link to='/updateProduct'>
+                    <Link to={`/updates/${_id}`}>
                         <button
                             className="block lg:ml-28 w-full select-none rounded-lg bg-orange-400 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                             type="button"
