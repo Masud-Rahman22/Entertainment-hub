@@ -36,14 +36,14 @@ const Login = () => {
     return (
         <div className="flex flex-col md:flex-row-reverse items-center justify-center my-10">
             <div className="flex-1">
-                <img className="h-[600px] w-[600px]" src={loginLogo} alt="" />
+                <img className="w-full h-full md:h-[600px] md:w-[600px]" src={loginLogo} alt="" />
             </div>
             <div className="flex-1">
                 <div className="text-center">
                     <h1 className="text-5xl font-bold text-white my-5">Login</h1>
                     <p className="text-center text-white mt-5">New Here? <Link to="/register" className="underline text-orange-400 text-sm font-bold">Register</Link></p>
                 </div>
-                <form onSubmit={handleToLogin} className="p-10 w-2/3 mx-auto">
+                <form onSubmit={handleToLogin} className="p-10 w-full md:w-2/3 mx-auto">
                     <input className="border-b-2 font-bold text-sm w-full mt-10 p-2" type="email" name="email" id="" placeholder="Enter Your Email" required />
                     <input className="border-b-2 font-bold text-sm w-full mt-10 p-2" type="password" name="password" id="" placeholder="Password" required />
                     <button className="btn bg-orange-400 text-white w-full mt-10 rounded-none">Login</button>

@@ -1,26 +1,33 @@
 import { useLoaderData } from "react-router-dom";
+import swal from "sweetalert";
 
 
 const CardDetails = () => {
     const details = useLoaderData();
-    const {brandName,image,name,price,rating,shortDescription,type,_id} = details;
-    const handleToAddInCart =(_id)=>{
-        fetch(`http://localhost:5000/carts/${_id}`,{
+    const {brandName,image,name,price,rating,shortDescription,type} = details;
+    const detailedInfo = {
+        brandName,image,name,price,rating,shortDescription,type
+    }
+    const handleToAddInCart =()=>{
+        fetch('http://localhost:5000/carts',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(details)
+            body: JSON.stringify(detailedInfo)
         })
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            if(data.insertedId){
+                swal("Great", "You Added this to your cart", "success");
+            }
         })
     }
     return (
         <div>
-            <div className="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-clip-border text-gray-700 shadow-md bg-black mx-auto my-10">
-                <div className="relative w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
+            <div className="relative flex w-full max-w-[48rem] flex-col md:flex-row rounded-xl bg-clip-border text-gray-700 shadow-md bg-black mx-auto my-10">
+                <div className="relative md:w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
                     <img
                         src={image}
                         alt="image"
@@ -40,7 +47,7 @@ const CardDetails = () => {
                     <span className="text-orange-400 text-xl font-semibold mr-10">Price: {price}</span>
                     <span className="text-orange-400 text-xl font-semibold mr-10">Rating: {rating}</span>
                     <span className="text-orange-400 text-xl font-semibold">Type: {type}</span>
-                    <button onClick={()=>handleToAddInCart(_id)} className="btn bg-orange-400 w-full text-white mt-5">Add To Cart</button>
+                    <button onClick={handleToAddInCart} className="btn bg-orange-400 w-full text-white mt-5">Add To Cart</button>
                 </div>
             </div>
         </div>

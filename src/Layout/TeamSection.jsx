@@ -9,12 +9,12 @@ const TeamSection = () => {
         data-aos-easing="ease-in-sine">
             <div className="flex flex-col items-center justify-center">
                 <p className="text-white text-2xl lg:mt-20">Meet Us</p>
-                <h1 className="text-orange-400 text-5xl font-semibold mt-5">Our Awesome Team</h1>
-                <p className="text-white font-extralight text-lg mt-5 lg:w-3/4 text-center">Meet the creative minds behind our spectacular entertainment website. Our team is a diverse blend of passionate individuals who live and breathe all things entertainment. From dedicated writers who craft engaging articles and reviews to tech-savvy wizards who ensure our platform runs seamlessly, we are a dynamic ensemble. Our talented designers bring visuals to life, while our video production experts deliver captivating content. Editors with a keen eye for detail and social media mavens keep you up-to-date and engaged. Together, we form a harmonious symphony, working tirelessly to bring you the latest news, insightful features, and unforgettable experiences from the world of entertainment.</p>
+                <h1 className="text-orange-400 text-3xl md:text-5xl font-semibold mt-5">Our Awesome Team</h1>
+                <p className="text-white font-extralight text-sm md:text-lg mt-5  lg:w-3/4 text-center">Meet the creative minds behind our spectacular entertainment website. Our team is a diverse blend of passionate individuals who live and breathe all things entertainment. From dedicated writers who craft engaging articles and reviews to tech-savvy wizards who ensure our platform runs seamlessly, we are a dynamic ensemble. Our talented designers bring visuals to life, while our video production experts deliver captivating content. Editors with a keen eye for detail and social media mavens keep you up-to-date and engaged. Together, we form a harmonious symphony, working tirelessly to bring you the latest news, insightful features, and unforgettable experiences from the world of entertainment.</p>
                 <button className="btn btn-outline border-white text-white mt-5 hover:bg-orange-400">Read More</button>
             </div>
             <div className='flex flex-col md:flex-row justify-evenly items-center mt-10'>
-                <div className="relative flex flex-col text-gray-700 bg-black shadow-md lg:w-60 rounded-xl bg-clip-border">
+                <div className="relative flex flex-col text-gray-700 bg-black shadow-md w-48 lg:w-60 rounded-xl bg-clip-border">
                     <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg h-52 rounded-full">
                         <img src={pic2} alt="profile-picture" />
                     </div>
@@ -47,7 +47,7 @@ const TeamSection = () => {
                         </a>
                     </div>
                 </div>
-                <div className="relative flex flex-col text-gray-700 bg-black shadow-md lg:w-60 rounded-xl bg-clip-border">
+                <div className="relative flex flex-col text-gray-700 bg-black shadow-md w-48 lg:w-60 rounded-xl bg-clip-border">
                     <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg h-52 rounded-full bg-clip-border">
                         <img src={pic3} alt="profile-picture" />
                     </div>
@@ -80,8 +80,8 @@ const TeamSection = () => {
                         </a>
                     </div>
                 </div>
-                <div className="relative flex flex-col text-gray-700 bg-black shadow-md lg:w-60 rounded-xl bg-clip-border">
-                    <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg h-52 rounded-full bg-clip-border">
+                <div className="relative flex flex-col text-gray-700 bg-black shadow-md w-48 lg:w-60 rounded-xl bg-clip-border">
+                    <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg md:h-52 rounded-full bg-clip-border">
                         <img src={pic1} alt="profile-picture" />
                     </div>
                     <div className="p-6 text-center">
