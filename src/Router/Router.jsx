@@ -33,7 +33,7 @@ const router = createBrowserRouter([
             {
                 path: "/myCart",
                 element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-                loader: ()=> fetch('http://localhost:5000/carts')
+                loader: ()=> fetch('https://brand-shop-server-flame-alpha.vercel.app/carts')
             },
             {
                 path: "/login",
@@ -46,18 +46,18 @@ const router = createBrowserRouter([
             {
                 path: '/cards/:brandName',
                 element: <ProductInfo></ProductInfo>,
-                loader: ({params})=> fetch(`http://localhost:5000/cards/${params.brandName}`)
+                loader: ({params})=> fetch(`https://brand-shop-server-flame-alpha.vercel.app/cards/${params.brandName}`)
             },
             {
                 path: '/details/:_id',
                 element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/details/${params._id}`)
+                loader: ({params})=> fetch(`https://brand-shop-server-flame-alpha.vercel.app/details/${params._id}`)
             },
 
             {
                 path: '/updates/:_id',
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/updates/${params._id}`)
+                loader: ({params})=> fetch(`https://brand-shop-server-flame-alpha.vercel.app/updates/${params._id}`)
             }
         ]
     },

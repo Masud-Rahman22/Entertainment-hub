@@ -27,7 +27,7 @@ const UpdateProduct = () => {
             image, name, brandName, type, price, shortDescription, rating
         }
         console.log(updateInfo);
-        fetch(`http://localhost:5000/updates/${_id}`, {
+        fetch(`https://brand-shop-server-flame-alpha.vercel.app/updates/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

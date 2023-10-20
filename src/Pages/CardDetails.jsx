@@ -9,7 +9,7 @@ const CardDetails = () => {
         brandName,image,name,price,rating,shortDescription,type
     }
     const handleToAddInCart =()=>{
-        fetch('http://localhost:5000/carts',{
+        fetch('https://brand-shop-server-flame-alpha.vercel.app/carts',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -14,7 +14,7 @@ const AddProduct = () => {
             image,name,brandName,type,price,shortDescription,rating
         }
         console.log(brandInfo);
-        fetch('http://localhost:5000/cards',{
+        fetch('https://brand-shop-server-flame-alpha.vercel.app/cards',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
