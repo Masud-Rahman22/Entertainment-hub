@@ -8,14 +8,6 @@ const Login = () => {
     const { googleLogin, Login } = useContext(authContext);
     const location = useLocation();
     const navigate = useNavigate();
-    const handleToGoogleLogin = () => {
-        googleLogin()
-            .then(() => {
-                swal("Great", "You are signed in with Google", "success");
-                navigate(location?.state ? location.state : '/')
-            })
-            .catch()
-    }
     const handleToLogin = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget)
@@ -24,6 +16,7 @@ const Login = () => {
         Login(email, password)
             .then(() => {
                 swal("Welcome", "You are Logged in", "success");
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 console.log(error.code);
@@ -33,6 +26,15 @@ const Login = () => {
                 }
             });
     }
+    const handleToGoogleLogin = () => {
+        googleLogin()
+            .then(() => {
+                swal("Great", "You are signed in with Google", "success");
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch()
+    }
+
     return (
         <div className="flex flex-col md:flex-row-reverse items-center justify-center my-10">
             <div className="flex-1">
