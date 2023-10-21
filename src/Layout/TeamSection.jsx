@@ -53,7 +53,7 @@ const TeamSection = () => {
                     </div>
                     <div className="p-6 text-center">
                         <h4 className="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-white">
-                            Abel tesfaye
+                            Abel Tesfaye
                         </h4>
                         <p className="block font-sans text-base antialiased font-medium leading-relaxed text-orange-400 bg-clip-text">
                             Visual Effects Artist

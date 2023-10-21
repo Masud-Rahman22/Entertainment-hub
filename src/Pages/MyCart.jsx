@@ -12,7 +12,7 @@ const MyCart = () => {
             {
                 newCart.length > 0 ? newCart.map(cart => <CartDetails key={cart._id} newCart={newCart} setNewCart= {setNewCart} cartInfo={cartInfo} cart={cart}></CartDetails>)
                 :
-                <div className="text-orange-400 text-4xl font-bold h-[100vh] w-full flex items-center justify-center md:ml-96"><p>No Data Added</p></div>
+                <div className="text-orange-400 text-4xl font-bold h-[100vh] w-full flex items-center justify-center md:ml-96"><p>No Items Added</p></div>
             }
         </div>
     );
