@@ -1,15 +1,27 @@
 import { NavLink } from "react-router-dom";
 import logo from "/dc-entertainment-logo.jpg"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { authContext } from "../AuthProvider/AuthProvider";
-
+// import { getItem } from "localforage";
+// import { VscColorMode } from "react-icons/vsc";
+// import { getItem } from "localforage";
 const NavBar = () => {
     const { user, Logout } = useContext(authContext)
+    const [theme, setTheme] = useState()
     const handleToLogout = () => {
         Logout()
             .then()
             .catch()
     }
+    const handleToggle = (e) => {
+        if (e.target.checked) {
+            setTheme("dark")
+        }
+        else {
+            setTheme("light")
+        }
+    }
+
     const Links = <>
         <li className="text-white"><NavLink
             to="/"
@@ -63,18 +75,25 @@ const NavBar = () => {
                         {Links}
                     </ul>
                 </div>
-                    {
-                        user && <div className="navbar-end gap-2">
-                            <p>{user.displayName}</p>
-                            <div className="w-10 rounded-full navbar-end">
-                                <img className="rounded-full" src={user?.photoURL} />
-                            </div>
-                            <button onClick={handleToLogout} className="btn bg-orange-400 text-white border-none">Logout</button>
+                {
+                    user && <div className="navbar-end gap-2">
+                        <p>{user.displayName}</p>
+                        <div className="w-10 rounded-full navbar-end">
+                            <img className="rounded-full" src={user?.photoURL} />
                         </div>
-                    }
+                        <button onClick={handleToLogout} className="btn bg-orange-400 text-white border-none">Logout</button>
+                    </div>
+                }
+                <div className="form-control ml-5">
+                    <label className="label cursor-pointer">
+                        <span className="label-text">Mode</span>
+                        <input onChange={handleToggle} type="checkbox" className="toggle" checked />
+                    </label>
+                </div>
             </div>
         </div>
     );
 };
 
 export default NavBar;
+// getItem(theme = "dark") ? getItem(theme = "dark") : "light"

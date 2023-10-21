@@ -42,7 +42,7 @@ const Register = () => {
     return (
         <div className="flex flex-col md:flex-row-reverse items-center justify-center my-10">
             <div className="flex-1">
-                <img className="h-[800px] w-[700px]" src={loginLogo} alt="" />
+                <img className="h-full w-screen md:h-[800px] md:w-[700px]" src={loginLogo} alt="" />
             </div>
             <div className="flex-1">
                 <div className="text-center">
@@ -56,13 +56,13 @@ const Register = () => {
                     <input className="border-b-2 font-bold text-sm w-full mt-10 p-2" type="email" name="email" id="" placeholder="Enter Your Email" required />
                     <input className="border-b-2 font-bold text-sm w-full mt-10 p-2" type="password" name="password" id="" placeholder="Password" required />
                     <input className="border-b-2 font-bold text-sm w-full mt-10 p-2" type="password" name="password" id="" placeholder="Confirm Password" required />
-                    <button className="btn btn-warning w-full mt-10 rounded-none">Register</button>
+                    <button className="btn bg-orange-400 w-full mt-10 rounded-none">Register</button>
                 </form>
                 <div className="flex flex-col justify-center items-center gap-5">
                     <div className="flex items-center gap-2">
-                        <hr className="w-[200px] h-[1px] border-2" />
+                        <hr className="w-[100px] md:w-[200px] h-[1px] border-2" />
                         <span>Or</span>
-                        <hr className="w-[200px] h-[1px] border-2" />
+                        <hr className="w-[100px] md:w-[200px] h-[1px] border-2" />
                     </div>
                     <div className="flex flex-col justify-center items-center gap-3">
                         <p className="font-bold text-orange-400">You can sign up using</p>

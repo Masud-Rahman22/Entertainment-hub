@@ -2,8 +2,8 @@ import swal from "sweetalert";
 
 
 // eslint-disable-next-line react/prop-types
-const CartDetails = ({ cart,setNewCart,newCart }) => {
-    
+const CartDetails = ({ cart, setNewCart, newCart }) => {
+
     // eslint-disable-next-line react/prop-types
     const { brandName, image, name, shortDescription, _id } = cart
     const handleToDelete = (_id) => {
