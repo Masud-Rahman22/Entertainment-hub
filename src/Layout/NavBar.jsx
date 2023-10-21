@@ -21,7 +21,7 @@ const NavBar = () => {
             setTheme("light")
         }
     }
-
+    // localStorage.getItem()
     const Links = <>
         <li className="text-white"><NavLink
             to="/"
@@ -87,7 +87,7 @@ const NavBar = () => {
                 <div className="form-control ml-5">
                     <label className="label cursor-pointer">
                         <span className="label-text">Mode</span>
-                        <input onChange={handleToggle} type="checkbox" className="toggle" checked />
+                        <input onChange={handleToggle} type="checkbox" className="toggle" />
                     </label>
                 </div>
             </div>
